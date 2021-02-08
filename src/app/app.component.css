@@ -1,0 +1,92 @@
+@font-face {
+  font-family: absara;
+  src: url('/src/assets/fonts/Absara-MediumItalic.otf') format("opentype");
+}
+
+@font-face {
+  font-family: helvetica;
+  src: url('/src/assets/fonts/Helvetica46LightItalic_22438.ttf') format("truetype");
+}
+
+.container, .display-part {
+  min-height: 100% !important;
+  height: 100% !important;
+}
+
+:host {
+  min-height: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+.title {
+  display: flex;
+  margin: 0;
+}
+
+.title p {
+  font-family: absara, sans-serif;
+  font-size: 36pt;
+  cursor: pointer;
+  margin: 0 22px 0 0;
+}
+.title img {
+  width: 40px;
+  cursor: pointer;
+  margin-right: 22px;
+}
+
+.subtitle {
+  display: flex;
+  margin:0;
+  cursor: pointer;
+}
+
+.subtitle p {
+  font-family: helvetica, sans-serif;
+  font-size: 20pt;
+  cursor: pointer;
+  margin:0 12px 0 4px;
+}
+
+
+.header {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-flow: row;
+  flex-shrink: 1;
+  align-items: flex-end;
+  height: 40px;
+  padding-bottom: 10px;
+}
+
+.container {
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.display-part {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  margin: 22px;
+}
+
+.drops-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.drops-row {
+  display: flex;
+  flex-direction: row;
+}
+
+app-drop {
+  display: flex;
+}
