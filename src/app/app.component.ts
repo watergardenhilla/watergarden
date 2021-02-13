@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('header') header: ElementRef;
   rows = [];
   columns = [];
-  readonly dropWidth = 48;
+  readonly dropWidth = 42;
   readonly dropRightMargin = 4.55;
   readonly dropBottomMargin = 9;
   displayMarginLeft = new AsyncSubject();
@@ -31,12 +31,11 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
          i < this.container.nativeElement.offsetWidth;
          i += this.dropWidth + this.dropRightMargin) {
       this.rows.push(0);
-      console.log(this.container.nativeElement.offsetWidth - i);
-      this.displayMarginLeft.next((this.container.nativeElement.offsetWidth - i + this.dropWidth + this.dropRightMargin) / 3);
+      this.displayMarginLeft.next((this.container.nativeElement.offsetWidth - i  + (this.dropWidth / 2) - this.dropRightMargin*2));
     }
     for (let i = this.dropWidth;
          i < this.container.nativeElement.offsetHeight;
-         i += this.dropWidth + this.dropBottomMargin) {
+         i += this.dropWidth + this.dropBottomMargin + 1) {
       this.columns.push(0);
     }
     this.displayMarginLeft.complete();

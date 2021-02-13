@@ -1,12 +1,12 @@
 <div class="container">
   <div class="display-part" #displaypart [ngStyle]="{'margin-left.px': (displayMarginLeft | async)}">
-    <div #header class="header"
-         (click)="hideTitle()" *ngIf="showTitle | async">
+    <div #header class="header">
       <div class="title">
         <p>Water</p>
+        <p class="tilda">~</p>
         <img src="/assets/images/5.svg">
         <p>Garden</p>
-        <img src="/assets/images/5.svg">
+        <img src="/assets/images/5.svg" class="second-eye">
       </div>
       <div class="subtitle">
         <p>click ~ for ~ sound!</p>
