@@ -1,11 +1,11 @@
 @font-face {
   font-family: absara;
-  src: url('/src/assets/fonts/Absara-MediumItalic.otf') format("opentype");
+  src: url('/assets/fonts/Absara-MediumItalic.otf') format("opentype");
 }
 
 @font-face {
   font-family: helvetica;
-  src: url('/src/assets/fonts/Helvetica46LightItalic_22438.ttf') format("truetype");
+  src: url('/assets/fonts/Helvetica46LightItalic_22438.ttf') format("truetype");
 }
 
 .container, .display-part {
@@ -19,7 +19,6 @@
   display: block;
 }
 
-
 .title {
   display: flex;
   margin: 0;
@@ -31,6 +30,7 @@
   cursor: pointer;
   margin: 0 22px 0 0;
 }
+
 .title img {
   width: 40px;
   cursor: pointer;
@@ -39,7 +39,7 @@
 
 .subtitle {
   display: flex;
-  margin:0;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -47,9 +47,8 @@
   font-family: helvetica, sans-serif;
   font-size: 20pt;
   cursor: pointer;
-  margin:0 12px 0 4px;
+  margin: 0 12px 0 4px;
 }
-
 
 .header {
   background-color: white;
