@@ -1,3 +1,15 @@
 .drop {
   cursor: pointer;
 }
+
+@media screen and (min-width: 400px) {
+  .hidden-big {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  .hidden-small {
+    visibility: hidden;
+  }
+}

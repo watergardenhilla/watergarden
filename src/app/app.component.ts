@@ -27,21 +27,27 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
   }
 
   ngAfterViewInit(): void {
+    let iCount = 0;
     for (let i = this.dropWidth;
          i < this.container.nativeElement.offsetWidth;
          i += this.dropWidth + this.dropRightMargin) {
-      this.rows.push(0);
+      this.rows.push(iCount++);
       this.displayMarginLeft.next((this.container.nativeElement.offsetWidth - i  + (this.dropWidth / 2) - this.dropRightMargin*2));
     }
+    let jCount = 0;
     for (let i = this.dropWidth;
          i < this.container.nativeElement.offsetHeight;
          i += this.dropWidth + this.dropBottomMargin + 1) {
-      this.columns.push(0);
+      this.columns.push(jCount++);
     }
     this.displayMarginLeft.complete();
   }
 
   ngAfterViewChecked(): void {
     this.cdRef.detectChanges();
+  }
+
+  idFromIndices(i: number, j: number): string {
+    return `${i}_${j}`;
   }
 }

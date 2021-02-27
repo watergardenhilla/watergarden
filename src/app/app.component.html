@@ -15,6 +15,7 @@
     <div *ngFor="let i of rows" class="drops-column">
       <div *ngFor="let j of columns" class="drops-row">
         <app-drop
+          [id]="[i, j]"
           [ngStyle]="{'width.px': dropWidth, 'margin-right.px': dropRightMargin, 'margin-bottom.px': dropBottomMargin}"
         ></app-drop>
       </div>

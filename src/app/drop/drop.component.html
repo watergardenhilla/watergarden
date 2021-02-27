@@ -1,1 +1,1 @@
-<img class="drop" [src]="curSrc | async" (click)="cycle()">
+<img class="drop" [ngClass]="cssClass()" [src]="curSrc | async" (click)="cycle()">
