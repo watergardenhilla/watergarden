@@ -12,6 +12,7 @@ export class SoundsService {
     for (let i = 1; i < NUM_OF_AUDIOS; i++) {
       const audio = new Audio();
       audio.src = `/assets/sounds/${i}.mp3`;
+      audio.preload = '';
       audio.load();
       this.audios.set(i, `/assets/sounds/${i}.mp3`);
     }
