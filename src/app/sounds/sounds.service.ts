@@ -18,7 +18,6 @@ export class SoundsService {
   }
 
   playCyclePosition(position: number): void {
-    console.log(`sounds: position: ${position}`);
     if (!this.audios.has(position)) {
       console.log('no audio for position.');
       return;
