@@ -56,7 +56,7 @@
   margin: 0;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-aspect-ratio: 2/3) {
   .header {
     flex-flow: row;
   }
