@@ -12,8 +12,8 @@
         <p>click ~ for ~ sound!</p>
       </div>
     </div>
-    <div *ngFor="let i of rows" class="drops-column">
-      <div *ngFor="let j of columns" class="drops-row">
+    <div *ngFor="let i of rows; trackBy: trackByFn" class="drops-column">
+      <div *ngFor="let j of columns; trackBy: trackByFn" class="drops-row">
         <app-drop
           [id]="[i, j]"
           [ngStyle]="{'width.px': dropWidth, 'margin-right.px': dropRightMargin, 'margin-bottom.px': dropBottomMargin}"

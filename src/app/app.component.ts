@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AsyncSubject, BehaviorSubject} from 'rxjs';
 
 @Component({
@@ -26,13 +26,15 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
     this.showTitle.next(false);
   }
 
-  ngAfterViewInit(): void {
+  createDrops(): void {
+    this.rows = [];
+    this.columns = [];
     let iCount = 0;
     for (let i = this.dropWidth;
          i < this.container.nativeElement.offsetWidth;
          i += this.dropWidth + this.dropRightMargin) {
       this.rows.push(iCount++);
-      this.displayMarginLeft.next((this.container.nativeElement.offsetWidth - i  + (this.dropWidth / 2) - this.dropRightMargin*2));
+      this.displayMarginLeft.next((this.container.nativeElement.offsetWidth - i + (this.dropWidth / 2) - this.dropRightMargin * 2));
     }
     let jCount = 0;
     for (let i = this.dropWidth;
@@ -43,11 +45,19 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
     this.displayMarginLeft.complete();
   }
 
+  ngAfterViewInit(): void {
+    this.createDrops();
+  }
+
+  trackByFn(index: number, item): number {
+    return item;
+  }
+
   ngAfterViewChecked(): void {
     this.cdRef.detectChanges();
   }
 
-  idFromIndices(i: number, j: number): string {
-    return `${i}_${j}`;
+  @HostListener('window:resize', ['$event']) onResize(event): void {
+    this.createDrops();
   }
 }
